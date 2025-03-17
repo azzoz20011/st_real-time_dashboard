@@ -48,12 +48,10 @@ def generate_data():
 
 # Streamlit Dashboard
 def dashboard():
-    st.title("Real-Time Telemetry Dashboard")
-    
+    st.title("Real-Time Dashboard")
     speed_placeholder = st.empty()
     distance_placeholder = st.empty()
     status_placeholder = st.empty()
-    
     while True:
         speed, distance, status = get_latest_data()
         speed_placeholder.metric(label="Current Speed (km/h)", value=speed)
