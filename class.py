@@ -38,11 +38,12 @@ def get_latest_data():
 
 # Simulated data generation
 def generate_data():
+    distance = 0  # Start with zero distance
     while True:
-        speed = round(random.uniform(0, 100), 2)
-        distance = round(random.uniform(0, 500), 2)
-        status = random.choice([True, False])
-        insert_data(speed, distance, status)
+        speed = round(random.uniform(0, 2), 2)  # Speed between 0-2 km/h
+        distance += speed * (0.1 / 3.6)  # Convert speed (km/h) to distance traveled in 0.1s (meters)
+        status = speed > 0  # Active if speed is greater than zero
+        insert_data(speed, round(distance, 2), status)
         time.sleep(0.1)
 
 # Streamlit Dashboard
