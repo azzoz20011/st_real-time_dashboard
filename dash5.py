@@ -318,8 +318,8 @@ def main():
         refresh_interval = st.slider("Refresh Interval (seconds)", 1, 60, 1)
         
         st.header("Model Configuration")
-        model_path = "models/svm_on_preprocessed_cnn.joblib"
-        model_s3_key = st.text_input("Model S3 Key (Optional)", "models/svm_on_preprocessed_cnn.joblib")
+        model_path = "svm_on_preprocessed_cnn.joblib"
+        model_s3_key = st.text_input("Model S3 Key", "svm_on_preprocessed_cnn.joblib")
         classes_input = "nothing,Pipe,Foil"
         classes = [c.strip() for c in classes_input.split(",")]
         
